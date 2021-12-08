@@ -100,8 +100,14 @@ def is_valid_walk(walk):
 def is_valid_walk_better(walk):
     return (len(walk) == 10 and walk.count('s') == walk.count('n') and walk.count('e') == walk.count('w'))
 
-        
-    
+#017 split(), capitalize()
+def generate_hashtag2(s):
+    output = '#'
+    for word in s.split():
+        output += word.capitalize()
+    if len(output) > 140 or len(s) == 0:
+        return False
+    return str(output)
 
 
 
