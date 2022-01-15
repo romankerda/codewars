@@ -7,4 +7,4 @@ def single_digit(n):
     
     
         
-print(single_digit(524287))
+print(single_digit(15))
