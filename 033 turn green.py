@@ -1,19 +1,23 @@
 class SmartTrafficLight:
     def __init__(self, st1, st2):
-        self.st1 = st1
-        self.st2 = st2
+        self.st1 = Street(*st1)
+        self.st2 = Street(*st2)
         
     def turngreen(self):
         result = ''
-        if self.st1[0] == self.st2[0]:
+        if self.st1.cars == self.st2.cars:
             return None
-        elif self.st1[0] > self.st2[0]:
-            result = st1[1]
-            self.st1[1] = 0
+        elif self.st1.cars > self.st2.cars:
+            self.st1.cars = 0
+            return self.st1.name
         else:
-            result = st1[1]
-            self.st2[2] = 0 
-        return result
+            self.st2.cars = 0 
+            return self.st2.name
+    
+class Street:
+    def __init__(self, cars, name):
+        self.cars = cars
+        self.name = name
             
     
     
